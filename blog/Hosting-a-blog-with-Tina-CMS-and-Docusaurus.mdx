@@ -25,11 +25,11 @@ How to set it up.
 
 **Get it running locally**
 
-First for the repo from the Tina Docusaurus repo in Github: [https://github.com/tinacms/tinasaurus](https://github.com/tinacms/tinasaurus)
+First for the repo from the Tina Docusaurus repo in Github: [https://github.com/tinacms/tinasaurus](https://github.com/tinacms/tinasaurus "")
 
 This way you can always pull down any improvements that they do to the repo later on.
 
-Start the project locally by running: yarn tina and open [http://localhost:3000/admin](http://localhost:3000/admin) in a browser.
+Start the project locally by running: yarn tina and open [http://localhost:3000/admin](http://localhost:3000/admin "") in a browser.
 
 GitHub Pages Configuration
 
@@ -101,3 +101,20 @@ github_token: ${ { secrets.GITHUB_TOKEN } }
 publish_dir: ./ build
 
 ```
+
+Commit and Push
+
+Commit all your changes and push to the main branch.
+
+```shell
+git add.
+git commit - m "Setup GitHub Actions for Docusaurus"
+git push
+
+```
+
+Activate GitHub Pages
+
+1. Go to your repository settings on GitHub, scroll down to the GitHub Pages section, select gh-pages branch as your source, and save.
+
+After you have pushed your changes to the repository, GitHub Actions should start a new job to deploy your Docusaurus site to GitHub Pages. You can check the status of the job in the "Actions" tab of your repository. After the deployment, you can access your site at https://\<GITHUB\_USERNAME>.github.io/\<REPO\_NAME>/.
