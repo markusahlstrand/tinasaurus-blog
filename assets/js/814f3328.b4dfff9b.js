@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinasaurus_blog=self.webpackChunktinasaurus_blog||[]).push([[2535],{5641:s=>{s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Hosting a blog with Tina CMS and Docusaurus","permalink":"/blog/Hosting-a-blog-with-Tina-CMS-and-Docusaurus"}]}')}}]);

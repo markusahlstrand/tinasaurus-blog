@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Tinasaurus Blog</title>
-        <link>https://tinasaurus.vercel.app/tinasaurus-blog/blog</link>
+        <link>https://tinasaurus.vercel.app/blog</link>
         <description>Tinasaurus Blog</description>
         <lastBuildDate>Wed, 02 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[Hosting a blog with Tina CMS and Docusaurus]]></title>
-            <link>https://tinasaurus.vercel.app/tinasaurus-blog/blog/Hosting-a-blog-with-Tina-CMS-and-Docusaurus</link>
+            <link>https://tinasaurus.vercel.app/blog/Hosting-a-blog-with-Tina-CMS-and-Docusaurus</link>
             <guid>/Hosting-a-blog-with-Tina-CMS-and-Docusaurus</guid>
             <pubDate>Wed, 02 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[The world of open-source software offers users an array of options for hosting and managing content, providing the much-needed autonomy over their digital presence. However, it often requires significant investment of time and might not deliver a result at par with ready-to-use commercial platforms. In this post, we will explore a combination of open-source tools that might help overcome this hurdle: Docusaurus, Tina CMS, and GitHub Pages.]]></description>

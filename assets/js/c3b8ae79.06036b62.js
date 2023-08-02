@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktinasaurus_blog=self.webpackChunktinasaurus_blog||[]).push([[122],{875:s=>{s.exports=JSON.parse('{"label":"open source","permalink":"/tinasaurus-blog/blog/tags/open-source","allTagsPath":"/tinasaurus-blog/blog/tags","count":1}')}}]);
