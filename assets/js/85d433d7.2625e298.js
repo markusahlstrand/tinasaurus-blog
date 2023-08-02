@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinasaurus_blog=self.webpackChunktinasaurus_blog||[]).push([[9202],{415:a=>{a.exports=JSON.parse('{"label":"hello","permalink":"/tinasaurus-blog/blog/tags/hello","allTagsPath":"/tinasaurus-blog/blog/tags","count":2}')}}]);
