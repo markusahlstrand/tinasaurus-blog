@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinasaurus_blog=self.webpackChunktinasaurus_blog||[]).push([[8685],{5923:s=>{s.exports=JSON.parse('{"label":"cms","permalink":"/blog/tags/cms","allTagsPath":"/blog/tags","count":1}')}}]);
