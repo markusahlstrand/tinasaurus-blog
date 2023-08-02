@@ -1,13 +1,12 @@
-[![Tinasaurus Demo](https://res.cloudinary.com/forestry-demo/image/upload/v1677522334/tina-io/blog/tinacms-docusaurus-markdown-editing.gif 'Tinasaurus Overview Video')](https://www.youtube.com/watch?v=2bHBwM54UB8)
-
+[![Tinasaurus Demo](https://res.cloudinary.com/forestry-demo/image/upload/v1677522334/tina-io/blog/tinacms-docusaurus-markdown-editing.gif "Tinasaurus Overview Video")](https://www.youtube.com/watch?v=2bHBwM54UB8)
 
 ## Quickstart With Tina
 
 ```
-$ npm install && npm run tina  
+$ npm install && npm run tina
 ```
 
-This will install dependancies and open the website in your browser. 
+This will install dependencies and open the website in your browser.
 
 Visit the CMS at [http://localhost:3000/admin](http://localhost:3000/admin) to start editing.
 

@@ -1,0 +1,20 @@
+---
+title: Hosting a blog with Tina CMS and Docusaurus
+authors:
+  - name: Markus Ahlstrand
+date: '2023-08-02'
+tags:
+  - docusaurus
+  - tinacms
+  - cms
+  - open source
+---
+
+This will be rewritten by chatGPT:\
+I like to use open source software that makes it possible to host things where and how I want without any lock in. Typically the downside with this is that you need to invest a lot more time to get a worse product than you would get for free if you use any of the available platform.
+
+But with combining a couple of services I think I finally have found a solution that will work for me:\
+\- Docusaurus. This is a really awesome solution for static generated content with a large ecosystem. It's primarily used of documentation websites but works just fine for blogs as well. The downside with Docusaurus is that you need to add the content as markdown files and commit them to git which isn't the fast workflow you would want if you just want to do a quick post. Which leads us to the next puzzle piece
+
+* Tina CMS. Tina is a markdown editor that integrates into other CMS and commits and changes to git. This takes away all the friction with doing the updates.
+* Github pages. I haven't used github pages in the past but it seems to be the most simple solution as I manage the source code on Github and use Github actions to automate the static generation of the website.
