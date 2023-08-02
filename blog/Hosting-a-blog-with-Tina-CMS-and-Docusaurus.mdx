@@ -2,6 +2,7 @@
 title: Hosting a blog with Tina CMS and Docusaurus
 authors:
   - name: Markus Ahlstrand
+    image_url: /img/markus.jpg
 date: '2023-08-02'
 tags:
   - docusaurus
@@ -10,30 +11,25 @@ tags:
   - open source
 ---
 
-This will be rewritten by chatGPT:
+The world of open-source software offers users an array of options for hosting and managing content, providing the much-needed autonomy over their digital presence. However, it often requires significant investment of time and might not deliver a result at par with ready-to-use commercial platforms. In this post, we will explore a combination of open-source tools that might help overcome this hurdle: Docusaurus, Tina CMS, and GitHub Pages.
 
-\
-I like to use open source software that makes it possible to host things where and how I want without any lock in. Typically the downside with this is that you need to invest a lot more time to get a worse product than you would get for free if you use any of the available platform.
+Docusaurus is a remarkable solution for static content generation. Originating as a tool primarily for documentation websites, Docusaurus has proven to be a versatile tool for blogging as well. Its large ecosystem supports various plugins, making it an adaptable option for different requirements. The main challenge with Docusaurus lies in its content management workflow. It necessitates adding content as markdown files and committing them to git. While this approach ensures version control, it can be cumbersome when you need to make a quick post.
 
-But with combining a couple of services I think I finally have found a solution that will work for me:\
-\- Docusaurus. This is a really awesome solution for static generated content with a large ecosystem. It's primarily used of documentation websites but works just fine for blogs as well. The downside with Docusaurus is that you need to add the content as markdown files and commit them to git which isn't the fast workflow you would want if you just want to do a quick post. Which leads us to the next puzzle piece
+To tackle this, we bring in our second tool: Tina CMS. Tina is a user-friendly markdown editor that can be integrated with various Content Management Systems (CMS). Its primary function is to streamline the process of editing and updating content by directly committing the changes to git. By eliminating the need to manually update markdown files and commit them to git, Tina CMS enhances the overall user experience and content management workflow.
 
-* Tina CMS. Tina is a markdown editor that integrates into other CMS and commits and changes to git. This takes away all the friction with doing the updates.
-* Github pages. I haven't used github pages in the past but it seems to be the most simple solution as I manage the source code on Github and use Github actions to automate the static generation of the website.
+Lastly, we have GitHub Pages, a simple and effective solution for web hosting directly from a GitHub repository. Its simplicity makes it an ideal choice for those who manage their source code on GitHub. Furthermore, GitHub Pages also supports GitHub Actions, a CI/CD infrastructure that can automate the static generation of the website. This automation significantly reduces manual effort, making it a time-efficient solution.
 
-How to set it up.
+In combination, Docusaurus, Tina CMS, and GitHub Pages present a strong case for a comprehensive, open-source, blogging solution. Docusaurus offers an efficient platform for static content generation, Tina CMS simplifies content updates, and GitHub Pages provide a hassle-free hosting solution. Each tool addresses different aspects of the blogging process, together offering a workflow that aligns with the benefits of commercial platforms while maintaining the flexibility of open-source software.
 
-**Get it running locally**
+For users navigating the open-source landscape, this triad can potentially be the answer to their blogging needs. Exploring and integrating these tools could pave the way to a more streamlined, autonomous, and effective blogging process.
 
-First for the repo from the Tina Docusaurus repo in Github: [https://github.com/tinacms/tinasaurus](https://github.com/tinacms/tinasaurus "")
+**How to set it up**
 
-This way you can always pull down any improvements that they do to the repo later on.
+1. Fork the repo from [https://github.com/tinacms/tinasaurus](https://github.com/tinacms/tinasaurus) to your own github account. This way you can always pull down any improvements that they do to the repo later on.
 
-Start the project locally by running: yarn tina and open [http://localhost:3000/admin](http://localhost:3000/admin "") in a browser.
+2\. Start the project locally by running `yarn tina` in a terminal and open [http://localhost:3000/admin](http://localhost:3000/admin "") in a browser.
 
-GitHub Pages Configuration
-
-Configure your docusaurus.config.js to deploy to GitHub Pages. Modify the fields url, baseUrl, and organizationName and projectName under presets.docusaurus-plugin-content-docs as per your project.
+3\. Configure your docusaurus.config.js to deploy to GitHub Pages. Modify the fields url, baseUrl, and organizationName and projectName under presets.docusaurus-plugin-content-docs as per your project.
 
 ```javascript
 module.exports = {
@@ -62,9 +58,7 @@ module.exports = {
 
 ```
 
-Setup GitHub Actions
-
-In your project root, create a new directory named .github/workflows and inside this, create a new file deploy.yml. This is the GitHub Actions configuration file.
+4\. Setup GitHub Actions. In your project root, create a new directory named .github/workflows and inside this, create a new file deploy.yml. This is the GitHub Actions configuration file.
 
 Put the following content in the deploy.yml file:
 
@@ -72,39 +66,39 @@ Put the following content in the deploy.yml file:
 name: Deployment
 
 on:
-push:
-branches:
-- main  # Set a branch to deploy
+  push:
+    branches:
+      - main # Set a branch to deploy
 
 jobs:
-deploy:
-runs - on: ubuntu - latest
+  deploy:
+    runs-on: ubuntu-latest
 
-steps:
-- uses: actions / checkout@v2
+    steps:
+      - uses: actions/checkout@v3
 
-- name: Setup Node
-uses: actions / setup - node@v2
-with:
-node - version: '14'
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-  - name: Install Dependencies
-run: npm ci
+      - name: Install Dependencies
+        run: yarn
 
-  - name: Build
-run: npm run build
+      - name: Build
+        run: yarn build
 
-  - name: Deploy
-uses: peaceiris / actions - gh - pages@v3
-with:
-github_token: ${ { secrets.GITHUB_TOKEN } }
-publish_dir: ./ build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
 
 ```
 
-Commit and Push
+5\. Grant Github Action Workflows read and write permissions to your repository. Otherwise it will fail to push the generated files to the `gh-pages` branch.
 
-Commit all your changes and push to the main branch.
+5\. Commit and Push.  Commit all your changes and push to the main branch.
 
 ```shell
 git add.
@@ -113,8 +107,6 @@ git push
 
 ```
 
-Activate GitHub Pages
-
-1. Go to your repository settings on GitHub, scroll down to the GitHub Pages section, select gh-pages branch as your source, and save.
+6\. Activate GitHub Pages. Go to your repository settings on GitHub, scroll down to the GitHub Pages section, select gh-pages branch as your source, and save.
 
 After you have pushed your changes to the repository, GitHub Actions should start a new job to deploy your Docusaurus site to GitHub Pages. You can check the status of the job in the "Actions" tab of your repository. After the deployment, you can access your site at https://\<GITHUB\_USERNAME>.github.io/\<REPO\_NAME>/.
