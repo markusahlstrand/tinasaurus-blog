@@ -86,8 +86,12 @@ const formatNavbarItem = (item, subnav = false) => {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: docusaurusData.title || "My Site",
-  tagline: docusaurusData.tagline || "Dinosaurs are cool",
+  url: "https://markusahlstrand.github.io",
+  baseUrl: "tinasaurus-blog",
+  projectName: "tinasaurus-blog",
+  organizationName: "markusahlstrand",
+  title: docusaurusData.title || "Markus Blog",
+  tagline: docusaurusData.tagline || "Random ramblings",
   url: docusaurusData.url || "https://tinasaurus.vercel.app/",
   baseUrl: "/",
   onBrokenLinks: "throw",
